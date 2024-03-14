@@ -29,7 +29,7 @@ namespace NZWalks.API.Controllers
 
 
         [HttpGet]
-        //[Authorize(Roles ="Reader")]
+        [Authorize(Roles ="Reader")]
 
         public async Task<IActionResult> GetAll()
         {
@@ -42,7 +42,7 @@ namespace NZWalks.API.Controllers
             return Ok(mapper.Map<List<RegionDto>>(regions));
 
         }
-
+        
         [HttpGet]
         [Route("{id:Guid}")]
         [Authorize(Roles = "Reader")]
